@@ -7,7 +7,7 @@ public class FullTimeEmployee extends Employee {
 
     public FullTimeEmployee(String id, String name, String dept, String job,
                             LocalDate joinDate, double salary, double allowance) {
-        super(id, name, dept, job, "Full-time", joinDate, salary);
+       super(id, name, dept, job, "Full-time", joinDate, salary, "ACTIVE");
         this.allowance = allowance;
     }
 
@@ -19,7 +19,7 @@ public class FullTimeEmployee extends Employee {
         this.allowance = allowance;
     }
 
-    @Override
+     @Override
     public double calculateMonthlySalary(int month, int year) {
         return basicSalary + allowance;
     }

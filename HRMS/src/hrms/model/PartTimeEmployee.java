@@ -7,7 +7,7 @@ public class PartTimeEmployee extends Employee {
 
     public PartTimeEmployee(String id, String name, String dept, String job,
                             LocalDate joinDate, double hourlyRate) {
-        super(id, name, dept, job, "Part-time", joinDate, 0);
+        super(id, name, dept, job, "Part-time", joinDate, 0, "ACTIVE");
         this.hourlyRate = hourlyRate;
     }
 
@@ -21,6 +21,6 @@ public class PartTimeEmployee extends Employee {
 
     @Override
     public double calculateMonthlySalary(int month, int year) {
-        return hourlyRate * 80;
+        return hourlyRate * 160;
     }
 }

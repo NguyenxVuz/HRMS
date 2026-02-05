@@ -1,7 +1,5 @@
 package hrms.model;
-
 import java.time.LocalDate;
-
 public abstract class Employee {
     protected String employeeID;
     protected String fullName;
@@ -11,22 +9,29 @@ public abstract class Employee {
     protected LocalDate dateOfJoining;
     protected double basicSalary;
     protected String status;
+    public abstract double calculateMonthlySalary(int month, int year);
 
-    public Employee(String employeeID, String fullName, String department,
-                    String jobTitle, String employmentType,
-                    LocalDate dateOfJoining, double basicSalary) {
-        this.employeeID = employeeID;
+    public Employee() {
+    }
+    
+    
+    public Employee(String empoyeeID, String fullName, String department, String jobTitle, String employmentType, LocalDate dateOfJoining, double basicSalary, String status) {
+        this.employeeID = empoyeeID;
         this.fullName = fullName;
         this.department = department;
         this.jobTitle = jobTitle;
         this.employmentType = employmentType;
         this.dateOfJoining = dateOfJoining;
         this.basicSalary = basicSalary;
-        this.status = "Active";
+        this.status = status;
     }
 
-    public String getEmployeeID() {
+    public String getEmpoyeeID() {
         return employeeID;
+    }
+
+    public void setEmpoyeeID(String empoyeeID) {
+        this.employeeID = empoyeeID;
     }
 
     public String getFullName() {
@@ -34,8 +39,7 @@ public abstract class Employee {
     }
 
     public void setFullName(String fullName) {
-        if (!fullName.isEmpty())
-            this.fullName = fullName;
+        this.fullName = fullName;
     }
 
     public String getDepartment() {
@@ -43,8 +47,7 @@ public abstract class Employee {
     }
 
     public void setDepartment(String department) {
-        if (!department.isEmpty())
-            this.department = department;
+        this.department = department;
     }
 
     public String getJobTitle() {
@@ -52,8 +55,23 @@ public abstract class Employee {
     }
 
     public void setJobTitle(String jobTitle) {
-        if (!jobTitle.isEmpty())
-            this.jobTitle = jobTitle;
+        this.jobTitle = jobTitle;
+    }
+
+    public String getEmploymentType() {
+        return employmentType;
+    }
+
+    public void setEmploymentType(String employmentType) {
+        this.employmentType = employmentType;
+    }
+
+    public LocalDate getDateOfJoining() {
+        return dateOfJoining;
+    }
+
+    public void setDateOfJoining(LocalDate dateOfJoining) {
+        this.dateOfJoining = dateOfJoining;
     }
 
     public double getBasicSalary() {
@@ -61,15 +79,29 @@ public abstract class Employee {
     }
 
     public void setBasicSalary(double basicSalary) {
-        if (basicSalary > 0)
-            this.basicSalary = basicSalary;
+        this.basicSalary = basicSalary;
     }
 
-    public abstract double calculateMonthlySalary(int month, int year);
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public String getEmployeeID() {
+    return employeeID;
+}
 
     @Override
     public String toString() {
-        return employeeID + " | " + fullName + " | " + department + " | " +
-               jobTitle + " | " + employmentType + " | Salary: " + basicSalary;
+        return "Employee{" + "empoyeeID=" + employeeID + ", fullName=" + fullName + ", department=" + department + ", jobTitle=" + jobTitle + ", employmentType=" + employmentType + ", dateOfJoining=" + dateOfJoining + ", basicSalary=" + basicSalary + ", status=" + status + '}';
     }
+    
+    
+    
+    
+    
+    
 }
+
