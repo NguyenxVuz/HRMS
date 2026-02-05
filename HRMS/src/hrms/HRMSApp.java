@@ -1,4 +1,4 @@
-package  src;
+package  hrms;
 public class HRMSApp {
     
 }

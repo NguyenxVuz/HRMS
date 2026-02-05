@@ -1,7 +1,7 @@
-package src;
+package hrms ;
 public class Main {
     public static void main(String[] args) {
-         HRMSApp app = new HRMSApp();
+        HRMSApp app = new HRMSApp();
         app.run();
 
     }
