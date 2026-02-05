@@ -1,4 +1,26 @@
 package hrms.model;
-public class PartTimeEmployee {
-    
+
+import java.time.LocalDate;
+
+public class PartTimeEmployee extends Employee {
+    private double hourlyRate;
+
+    public PartTimeEmployee(String id, String name, String dept, String job,
+                            LocalDate joinDate, double hourlyRate) {
+        super(id, name, dept, job, "Part-time", joinDate, 0);
+        this.hourlyRate = hourlyRate;
+    }
+
+    public double getHourlyRate() {
+        return hourlyRate;
+    }
+
+    public void setHourlyRate(double hourlyRate) {
+        this.hourlyRate = hourlyRate;
+    }
+
+    @Override
+    public double calculateMonthlySalary(int month, int year) {
+        return hourlyRate * 80;
+    }
 }
